@@ -55,3 +55,29 @@ Just combine reader and writer configuration.
 ```
 
 # Sample configuration file for TomEE
+
+To use it in TomEE you can use openejb-jar.xml:
+
+[source,xml]
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<openejb-jar xmlns="http://www.openejb.org/openejb-jar/1.1">
+  <pojo-deployment class-name="jaxrs-application">
+    <properties>
+      cxf.jaxrs.providers = boon
+    </properties>
+  </pojo-deployment>
+</openejb-jar>
+```
+
+And configure boon provider in resources.xml (put it in WEB-INF):
+
+[source,xml]
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <Service id="boon" class-name="com.github.rmannibucau.boon.jaxrs.BoonJsonProvider">
+    # someConfig = someValue
+  </Service>
+</resources>
+```

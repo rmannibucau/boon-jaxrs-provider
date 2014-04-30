@@ -1,0 +1,57 @@
+# About this project
+
+This project simply integrates Boon with JAX-RS API to be able to use it out-of-the-box as JSon provider.
+
+# Providers
+
+There are three providers:
+
+* com.github.rmannibucau.boon.jaxrs.BoonJsonMessageBodyWriter: the writer to marshall as JSon
+* com.github.rmannibucau.boon.jaxrs.BoonJsonMessageBodyReader: the reader to unmarshall JSon
+* com.github.rmannibucau.boon.jaxrs.BoonJsonProvider: the provider combining reader and writer
+
+# Configuration
+
+## Writer
+
+The writer configuration is the configuration of org.boon.json.JsonSerializerFactory:
+
+* outputType
+* fieldAccessType (org.boon.core.reflection.fields.FieldAccessMode name)
+* includeNulls
+* useAnnotations
+* includeEmpty
+* jsonFormatForDates
+* handleSimpleBackReference
+* handleComplexBackReference
+* includeDefault
+* cacheInstances
+* view
+
+## Reader
+
+The reader configuration is the configuration of org.boon.json.JsonParserFactory:
+
+* charset
+* lax
+* chop
+* lazyChop
+* fieldAccessType (org.boon.core.reflection.fields.FieldAccessMode name)
+* useAnnotations
+
+## Provider
+
+Just combine reader and writer configuration.
+
+# Maven dependency
+
+[source,xml]
+```
+<dependency>
+  <groupId>com.github.rmannibucau</groupId>
+  <artifactId>boon-jaxrs-provider</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+</dependency>
+```
+
+# Sample configuration file for TomEE

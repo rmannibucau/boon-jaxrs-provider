@@ -10,7 +10,7 @@
 
   <groupId>com.github.rmannibucau</groupId>
   <artifactId>boon-jaxrs-provider</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2-SNAPSHOT</version>
   <name>Boon JAX-RS Providers</name>
 
   <dependencies>
